@@ -1,0 +1,42 @@
+package test;
+
+public class test2 {
+
+	public static void main(String[] args) {
+		int count = 0;
+		int i;
+		for (int j = 1; j < 100; j++) {
+			for (i = 2; i < j; i++) {
+				if (j % i == 0) {
+					break;
+				}
+			}
+			if (i >= j) {
+				count += j;
+				System.out.println(j + "是质数");
+			} else {
+			}
+		}
+
+		System.out.println("1-100全体质数和为" + count);
+//		与下面注释部分为用方法实现求素数
+//		for(int i=2;i<100;i++) {
+//			if(su(i)==true) {
+//				System.out.println(i+"是质数");
+//			}
+//		}	
+
+	}
+//	public static boolean  su(int x){
+//	    int i;
+//	    for(i=2;i<x;i++) {
+//	    	if(x%i==0) {
+//	        	break;
+//	        }
+//	    }  
+//	    if(i>=x)
+//	        return true;
+//	    else
+//	        return false;
+//	}
+}
