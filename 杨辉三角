@@ -1,0 +1,39 @@
+package array;
+
+public class array4 {
+	public static void main(String[] args) {
+		// 杨辉三角
+		int a[][] = new int[7][7];
+		// 1.赋值
+		// 第一种方法
+		for (int i = 0; i < 7; i++) {
+			a[i][0] = 1;
+		}
+		for (int i = 1; i < 7; i++) {
+			for (int j = 1; j <= i; j++) {
+				if (j == 1 || j == i) {
+					a[i][j] = 1;
+				} else {
+					a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+				}
+			}
+		}
+		// 杨辉三角第二种方法
+//		for (int i = 0; i < 7; i++) {
+//			for (int j = 0; j <= i; j++) {
+//				if (j == 0) {// ||j==i这句没啥用，不加这句上句由于一直是1+0，一直都是1；加可加在j==0后面
+//					a[i][j] = 1;// 第一列设为0
+//				} else {
+//					a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+//				}
+//			}
+//		}
+		// 2.输出赋值后的结果
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print(a[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+}
